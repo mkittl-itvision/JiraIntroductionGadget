@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<atlassian-plugin key="welcomegadget" name="welcomegadget"
+	plugins-version="2">
+	<plugin-info>
+		<description>${project.description}</description>
+		<version>${project.version}</version>
+		<vendor name="${project.organization.name}" url="${project.organization.url}" />
+		<param name="plugin-icon">images/pluginIcon.png</param>
+		<param name="plugin-logo">images/pluginLogo.png</param>
+	</plugin-info>
+
+	<gadget name="Welcome Intro Gadget" key="welcome-intro-gadget"
+		location="gadget.xml" />
+
+	<!-- add our i18n resource -->
+	<resource type="download" name="i18n/ALL_ALL.xml" location="i18n/ALL_ALL.xml">
+		<param name="content-type" value="text/xml; charset=UTF-8" />
+	</resource>
+	<resource type="download" name="images/" location="images/"/>
+
+	<rest key="welcome-gadget-rest-resource" path="/welcomegadgetrestresource"
+		version="1.0">
+		<description>The Welcome Gadget Rest Resource Plugin</description>
+	</rest>
+
+	<component-import key="userManager"
+		interface="com.atlassian.sal.api.user.UserManager" />
+
+	<ao key="ao-module">
+		<description>The module configuring the Active Objects service used by
+			this plugin</description>
+		<entity>com.itvision.jira.plugin.gadget.ao.JiraGadgetResource</entity>
+	</ao>
+</atlassian-plugin>

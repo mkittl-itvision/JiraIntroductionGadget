@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Module>
+	<ModulePrefs title="__MSG_gadget.title__" directory_title="__MSG_gadget.title__"
+		description="__MSG_gadget.description__">
+		<Optional feature="gadget-directory">
+			<Param name="categories">
+				JIRA
+			</Param>
+		</Optional>
+		<Optional feature="atlassian.util" />
+		<Optional feature="auth-refresh" />
+		<Require feature="views" />
+		<Require feature="settitle" />
+		<Require feature="oauthpopup" />
+		<Require feature="dynamic-height" />
+		<Require feature="setprefs" />
+		#supportedLocales("${MODULE_KEY}")
+		#oauth
+		<Locale
+			messages="__ATLASSIAN_BASE_URL__/download/resources/welcomegadget/i18n/ALL_ALL.xml" />
+	</ModulePrefs>
+	<UserPref name="isConfigured" datatype="hidden" default_value="false" />
+	<Content type="html" view="profile">
+         <![CDATA[
+	        #requireResource("com.atlassian.jira.gadgets:common")
+	        #requireResource("com.atlassian.gadgets.publisher:ajs-gadgets")
+	        #includeResources()
+        
+	        <script type="text/javascript">
+	            (function () {
+            		var gadget = AJS.Gadget({
+	                    baseUrl: "__ATLASSIAN_BASE_URL__",
+	                    useOauth: "/rest/gadget/1.0/currentUser",
+	                    view: {
+	                        template: function(args) {
+	                            var gadget = this;
+	                            	
+	                            var resource = AJS.$(
+									"<img src='/jira/secure/viewavatar?avatarId=" + 
+										args.gadgetData["prjectIcon"] + "&avatarType=project' alt='kein Avatar' " + 
+										"style='float:left; padding: 10px;'/>" +
+									"<div style='padding: 10px;'>" +
+		                            	"<h1>" + args.gadgetData["projectName"] + "</h1>" +
+										"<p>" + args.gadgetData["projectDescription"] + "</p>" +
+									"</div>"
+	                            );
+		
+	                            gadget.getView().html(resource);
+	                        },
+	                        args: [{
+	                            key: "gadgetData",
+	                            ajaxOptions: function() {
+	                                return {
+	                                    url: "/rest/welcomegadgetrestresource/1.0/gadgetResource.json"
+	                                };
+	                            }
+	                        }]
+	                    }
+            		});
+	            })();
+	        </script>
+        ]]>
+	</Content>
+</Module>

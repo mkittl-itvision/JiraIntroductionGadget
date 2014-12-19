@@ -1,0 +1,5 @@
+<messagebundle>
+	<msg name="gadget.title">Introduction</msg>
+	<msg name="gadget.description">Gadget to be displayed instead of the default introduction Gadget.
+	 This gadget takes title, description and avatar from the  project</msg>
+</messagebundle>
