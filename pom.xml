@@ -4,14 +4,14 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.itvision.jira.plugin.gadget</groupId>
-	<artifactId>welcomegadget</artifactId>
+	<artifactId>itvintroductiongadget</artifactId>
 	<version>1.0-SNAPSHOT</version>
 	<organization>
 		<name>it-vision AG</name>
 		<url>http://www.it-vision.com/</url>
 	</organization>
-	<name>welcomegadget</name>
-	<description>This is the com.itvision.jira.plugin.gadget:welcomegadget plugin for Atlassian JIRA.</description>
+	<name>itvintroductiongadget</name>
+	<description>This is the com.itvision.jira.plugin.gadget:itvintroductiongadget plugin for Atlassian JIRA.</description>
 	<packaging>atlassian-plugin</packaging>
 	<dependencies>
 		<dependency>

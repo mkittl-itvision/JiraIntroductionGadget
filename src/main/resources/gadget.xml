@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
 	<ModulePrefs title="__MSG_gadget.title__" directory_title="__MSG_gadget.title__"
-		description="__MSG_gadget.description__">
+		description="__MSG_gadget.description__" author="Markus Kittl" 
+		author_email="markus.kittl@it-vision.com" 
+		screenshot='#staticResourceUrl("itvintroductiongadget:welcome-intro-gadget", "images/screenshot.png")'
+		thumbnail='#staticResourceUrl("itvintroductiongadget:welcome-intro-gadget", "images/thumbnail.png")'>
 		<Optional feature="gadget-directory">
 			<Param name="categories">
 				JIRA
@@ -17,7 +20,7 @@
 		#supportedLocales("${MODULE_KEY}")
 		#oauth
 		<Locale
-			messages="__ATLASSIAN_BASE_URL__/download/resources/welcomegadget/i18n/ALL_ALL.xml" />
+			messages="__ATLASSIAN_BASE_URL__/download/resources/itvintroductiongadget/i18n/ALL_ALL.xml" />
 	</ModulePrefs>
 	<UserPref name="isConfigured" datatype="hidden" default_value="false" />
 	<Content type="html" view="profile">
@@ -36,7 +39,7 @@
 	                            var gadget = this;
 	                            	
 	                            var resource = AJS.$(
-									"<img src='/jira/secure/viewavatar?avatarId=" + 
+									"<img src='__ATLASSIAN_BASE_URL__/secure/viewavatar?avatarId=" + 
 										args.gadgetData["prjectIcon"] + "&avatarType=project' alt='kein Avatar' " + 
 										"style='float:left; padding: 10px;'/>" +
 									"<div style='padding: 10px;'>" +

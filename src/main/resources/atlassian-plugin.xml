@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<atlassian-plugin key="welcomegadget" name="welcomegadget"
+<atlassian-plugin key="itvintroductiongadget" name="itvintroductiongadget"
 	plugins-version="2">
 	<plugin-info>
 		<description>${project.description}</description>
@@ -18,6 +18,8 @@
 		<param name="content-type" value="text/xml; charset=UTF-8" />
 	</resource>
 	<resource type="download" name="images/" location="images/"/>
+	<resource name="images/screenshot.png" location="images/screenshot.png" />
+	<resource name="images/thumbnail.png" location="images/thumbnail.png" />
 
 	<rest key="welcome-gadget-rest-resource" path="/welcomegadgetrestresource"
 		version="1.0">
